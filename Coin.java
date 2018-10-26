@@ -1,53 +1,26 @@
-//********************************************************************
-//  Coin.java      
-//
-//  Represents a coin with two sides that can be flipped.
-//********************************************************************
-import java.util.*;
-public class Coin
-{
-    private final int HEADS = 0;
-    private final int TAILS = 1;
-
-    private int face;
-
-    //-----------------------------------------------------------------
-    //  Sets up the coin by flipping it initially.
-    //-----------------------------------------------------------------
-    public Coin()
-    {
-        flip();
-    }
-
-    //-----------------------------------------------------------------
-    //  Flips the coin by randomly choosing a face value.
-    //-----------------------------------------------------------------
-    public void flip()
-    {
-        Random generator = new Random();
-        face = generator.nextInt(2);
-    }
-
-    //-----------------------------------------------------------------
-    //  Returns true if the current face of the coin is heads.
-    //-----------------------------------------------------------------
-    public boolean isHeads()
-    {
-        return (face == HEADS);
-    }
-
-    //-----------------------------------------------------------------
-    //  Returns the current face of the coin as a string.
-    //-----------------------------------------------------------------
-    public String toString()
-    {
-        String faceName;
-
-        if (face == HEADS)
-            faceName = "Heads";
-        else
-            faceName = "Tails";
-
-        return faceName;
-    }
+import java.util.Random;
+public class Coin{
+	private int result;
+	public Coin(){
+		result = 1;
+	}
+	public boolean isHeads(){
+		
+		if(result == 1){
+			return true;
+		}
+		else{
+			return false;
+		}
+	}
+	public void flip(){
+		 //result;
+		Random rand = new Random();
+		result = rand.nextInt(2) + 1;
+	}
+	public String toString(){
+		String result1;
+		result1 = "Player " + result + " goes first.";
+		return result1;
+	}
 }
